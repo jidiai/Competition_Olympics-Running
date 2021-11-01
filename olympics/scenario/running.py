@@ -14,7 +14,7 @@ class Running(OlympicsBase):
         self.speed_cap =  100
 
         self.draw_obs = True
-        self.show_traj = False
+        self.show_traj = True
 
         #self.is_render = True
 

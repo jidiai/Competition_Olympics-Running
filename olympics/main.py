@@ -83,7 +83,7 @@ if __name__ == "__main__":
         done = False
         step = 0
         if RENDER:
-            game.render()
+            game.render('MAP {}'.format(ind))
 
         time_epi_s = time.time()
         while not done:
@@ -96,7 +96,7 @@ if __name__ == "__main__":
             obs, reward, done, _ = game.step([action1, action2])
 
             if RENDER:
-                game.render()
+                game.render('MAP {}'.format(ind))
 
             # plt.imshow(obs[0])  #allow you to visualise the partial observation
             #  plt.show()

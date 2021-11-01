@@ -8,7 +8,13 @@ from algo.sac import CNN_SAC
 from algo.random import random_agent
 from common import *
 
+import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
+from pathlib import Path
+base_path = str(Path(__file__).resolve().parent.parent)
+sys.path.append(base_path)
+
 
 from olympics.viewer import debug
 from olympics.generator import create_scenario
@@ -41,7 +47,7 @@ def get_args():
     # load model
     parser.add_argument('--load', action='store_true') # 加是true；不加为false
     parser.add_argument('--run', default=30, type=int)
-    parser.add_argument('--load_episode', default=600, type=int)
+    parser.add_argument('--load_episode', default=900, type=int)
 
     args = parser.parse_args()
     return args
@@ -136,6 +142,7 @@ def main(args):
         obs = env.reset()
         if info.render:
             env.render()
+
         wrapper = Wrapper()
         wrapper.step = 0
         Gt = 0
@@ -279,11 +286,11 @@ def main(args):
 if __name__ == '__main__':
     args = get_args()
     #args.train = True
-    args.load = True
-    args.algo='ppo'
-    args.run=2
-    args.load_episode=900
-    args.map = 2
+    #args.load = True
+    #args.algo='ppo'
+    #args.run=2
+    #args.load_episode=700
+    #args.map = 2
     main(args)
     print("end")
 

@@ -109,7 +109,7 @@ class Viewer():
             pygame.draw.lines(self.background, agent_list[b].color, 1, points[b], 1)
 
     def draw_energy_bar(self, agent_list):
-        coord = [540 + 70 * i for i in range(len(agent_list))]
+        coord = [570 + 70 * i for i in range(len(agent_list))]
         for agent_idx in range(len(agent_list)):
             remaining_energy = agent_list[agent_idx].energy/agent_list[agent_idx].energy_cap
             start_pos = [coord[agent_idx], 100]
@@ -123,7 +123,7 @@ class Viewer():
     def draw_view(self, obs, agent_list):       #obs: [2, 100, 100] list
 
         #draw agent 1, [50, 50], [50+width, 50], [50, 50+height], [50+width, 50+height]
-        coord = [550 + 70 * i for i in range(len(obs))]
+        coord = [580 + 70 * i for i in range(len(obs))]
         for agent_idx in range(len(obs)):
             matrix = obs[agent_idx]
             obs_weight, obs_height = matrix.shape[0], matrix.shape[1]

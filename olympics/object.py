@@ -58,8 +58,8 @@ class InternalState(object):
         # todo: 非正方形视野
         # self.visibility = [100, 100]
         # self.visibility_clear = [2,2] # 清晰度 # 像素大小
-        self.visibility = 100
-        self.visibility_clear = 4
+        self.visibility = 150
+        self.visibility_clear = 6
         self.r = r
         self.position_init = position
 
@@ -601,7 +601,7 @@ class Cross(GameObj):
             self.length = math.sqrt((l1[0]-l2[0])**2 + (l1[1]-l2[1])**2)
         else:
             self.length = length
-        self.width = width
+        self.width = 5 if color == 'red' else width
 
         self.l1, self.l2 = self.init_pos
         self.fn()

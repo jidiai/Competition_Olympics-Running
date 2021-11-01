@@ -1,6 +1,6 @@
 # Olympics Engine
 
-## Scenario1: arc-running
+## Scenario1: running
 
 <b>标签：</b>不完全观测；离散动作空间；连续状态空间；测试版本
 
