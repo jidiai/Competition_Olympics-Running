@@ -1,4 +1,4 @@
-# Created by pytest automatically.
+# Default ignored files
 .idea/
 olympics/__pycache__/
 olympics/scenario/__pycache__/
