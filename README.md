@@ -49,3 +49,7 @@ This is for now a beta version and we intend to add more sports scenario, stay t
 
 >python baselines/trainer.py
 
+## Visualisation
+
+<img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/olympics%20running.gif width=600>
+
