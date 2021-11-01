@@ -40,6 +40,12 @@ This is for now a beta version and we intend to add more sports scenario, stay t
 ---
 
 ## Run a game
->python olympics main.py --map "map1"
 
-![gif](https://github.com/jidiai/OlympicsEnv/blob/main/assets/demo.gif)
+>python olympics/main.py
+
+---
+
+## Train a baseline agent 
+
+>python baselines/trainer.py
+

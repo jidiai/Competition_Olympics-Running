@@ -1,18 +1,18 @@
-from pathlib import Path
 import sys
+from os import path
+father_path = path.dirname(__file__)
+sys.path.append(str(father_path))
 
-base_path = str(Path(__file__).resolve().parent.parent.parent)
-sys.path.append(base_path)
+from algo.ppo import PPO
+from algo.sac import CNN_SAC
+from algo.random import random_agent
+from common import *
 
-from OlympicsEnv.olympics.generator import create_scenario
-from OlympicsEnv.olympics.scenario.running import Running
-from OlympicsEnv.baselines.algo.ppo import PPO
-from OlympicsEnv.baselines.algo.sac import CNN_SAC
-from OlympicsEnv.baselines.algo.random import random_agent
-from OlympicsEnv.baselines.common import *
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from OlympicsEnv.olympics.viewer import debug
-
+from olympics.viewer import debug
+from olympics.generator import create_scenario
+from olympics.scenario.running import Running
 import torch
 from torch.autograd import Variable
 import numpy as np
@@ -34,7 +34,7 @@ def get_args():
     parser.add_argument('--scenario', default="Running", type=str)
     parser.add_argument('--map', default=2, type=int)
     parser.add_argument('--algo', default="ppo", type=str,
-                        help="ppo")
+                        help="ppo/sac")
     # train
     parser.add_argument('--max_episodes', default=1000, type=int)
     parser.add_argument('--train', action='store_true') # 加是true；不加为false

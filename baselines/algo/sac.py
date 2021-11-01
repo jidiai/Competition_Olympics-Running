@@ -8,8 +8,11 @@ import numpy as np
 import random
 
 import sys
-from OlympicsEnv.baselines.network import CNN_CategoricalActor, CNN_Critic2
-from OlympicsEnv.baselines.common import *
+from os import path
+father_path = path.dirname(__file__)
+sys.path.append(str(os.path.dirname(father_path)))
+from network import CNN_CategoricalActor, CNN_Critic2
+from common import *
 
 from torch.utils.tensorboard import SummaryWriter
 

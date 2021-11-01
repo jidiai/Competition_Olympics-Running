@@ -7,10 +7,12 @@ import torch.optim as optim
 from torch.distributions import Normal, Categorical
 from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
 import sys
-from OlympicsEnv.baselines.network import Actor, Critic, CNN_Actor, CNN_Critic
-from OlympicsEnv.baselines.common import *
-from collections import namedtuple
 from os import path
+father_path = path.dirname(__file__)
+sys.path.append(str(os.path.dirname(father_path)))
+from network import Actor, Critic, CNN_Actor, CNN_Critic
+from common import *
+from collections import namedtuple
 from torch.utils.tensorboard import SummaryWriter
 import datetime
 

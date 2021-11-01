@@ -1,10 +1,16 @@
 import sys
-from pathlib import Path
-base_path = str(Path(__file__).resolve().parent.parent.parent)
-sys.path.append(base_path)
-from OlympicsEnv.olympics.generator import create_scenario
+# from pathlib import Path
+# base_path = str(Path(__file__).resolve().parent.parent.parent)
+# sys.path.append(base_path)
+
+from os import path
+father_path = path.dirname(__file__)
+print("xxx", father_path)
+sys.path.append(str(father_path))
+print("father path: ", father_path)
+from generator import create_scenario
 import argparse
-from OlympicsEnv.olympics.agent import *
+from agent import *
 import time
 from scenario.running import Running
 
