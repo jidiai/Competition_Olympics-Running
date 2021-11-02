@@ -46,7 +46,7 @@ def get_args():
     parser.add_argument('--train', action='store_true') # 加是true；不加为false
     # load model
     parser.add_argument('--load', action='store_true') # 加是true；不加为false
-    parser.add_argument('--run', default=30, type=int)
+    parser.add_argument('--run', default=4, type=int)
     parser.add_argument('--load_episode', default=900, type=int)
 
     args = parser.parse_args()
@@ -78,7 +78,8 @@ class Args():
     store_when_win = False
 
     random_agent = True
-    control_agent = 1
+    control_agent = 1       #0 or 1
+    random_control = False
 
 info = Args()
 
@@ -125,7 +126,7 @@ def main(args):
     load = args.load
     if load:
         agent.load(run_dir="run"+str(args.run), episode=str(args.load_episode))
-    ctl_i = info.control_agent
+    ctl_i = random.choice([0,1]) if info.random_control else info.control_agent
 
     if args.train:
         writer = SummaryWriter(os.path.join(run_dir,"{}_{} on env {} map {}".format(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"),
@@ -239,9 +240,9 @@ def main(args):
             Gt += reward[ctl_i] if done else -1
             if info.render:
                 if train:
-                    env.render("Training...")
+                    env.render("Training..., Controlling agent {}".format(ctl_i))
                 else:
-                    env.render("Testing...")
+                    env.render("Testing..., Controlling agent {}".format(ctl_i))
 
             ################################# agent training ########################################
             if done:
@@ -249,8 +250,9 @@ def main(args):
                 win_is_op = 1 if reward[ctl_i] < reward[1-ctl_i] else 0
                 record_win.append(win_is)
                 record_win_op.append(win_is_op)
-                print("episide: ", i_epoch, "Episode Return: ", Gt, "win rate: ", '%.2f' % (sum(record_win)/len(record_win)),
-                      '%.2f' % (sum(record_win_op)/len(record_win_op)), train_count)
+                print("episide: ", i_epoch, "controlled agent: ", ctl_i, "; Episode Return: ", Gt,
+                      "; win rate(controlled & opponent): ", '%.2f' % (sum(record_win)/len(record_win)),
+                      '%.2f' % (sum(record_win_op)/len(record_win_op)), '; Trained episode:', train_count)
 
                 if info.store_when_win:
                     if win_is:
@@ -279,7 +281,7 @@ def main(args):
                 if args.train:
                     writer.add_scalar('training Gt', Gt, i_epoch)
                 break
-        if i_epoch % 500 == 0 and train:
+        if i_epoch % 100 == 0 and train:
             agent.save(run_dir, i_epoch)
 
 

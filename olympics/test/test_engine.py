@@ -1,11 +1,12 @@
 import sys
 from pathlib import Path
-base_path = str(Path(__file__).resolve().parent.parent.parent.parent)
+base_path = str(Path(__file__).resolve().parent.parent)
 sys.path.append(base_path)
+print(base_path)
 
 
-from OlympicsEnv.olympics.core import OlympicsBase
-from OlympicsEnv.olympics.object import *
+from core import OlympicsBase
+from object import *
 
 import time
 

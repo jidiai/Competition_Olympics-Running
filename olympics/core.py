@@ -10,6 +10,10 @@ import random
 import matplotlib.pyplot as pyplot
 import sys
 
+from pathlib import Path
+CURRENT_PATH = str(Path(__file__).resolve().parent)
+sys.path.append(CURRENT_PATH)
+
 from viewer import Viewer, debug
 #from olympics.utils import *
 
@@ -212,12 +216,14 @@ class OlympicsBase(object):
         return seed
 
     def set_seed(self, seed=None):
-        if not seed:        #use previous seed when no new seed input
-            seed = self.seed
-        else:               #update env global seed
-            self.seed = seed
-        random.seed(seed)
-        np.random.seed(seed)
+        pass
+
+        # if not seed:        #use previous seed when no new seed input
+        #     seed = self.seed
+        # else:               #update env global seed
+        #     self.seed = seed
+        # random.seed(seed)
+        # np.random.seed(seed)
 
 
 

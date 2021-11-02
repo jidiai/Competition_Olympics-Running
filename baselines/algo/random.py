@@ -4,7 +4,6 @@ class random_agent:
     def __init__(self, seed=None):
         self.force_range = [-100, 200]
         self.angle_range = [-30, 30]
-        self.seed(seed)
 
     def seed(self, seed = None):
         random.seed(seed)
