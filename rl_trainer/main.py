@@ -33,8 +33,8 @@ parser.add_argument("--save_interval", default=100, type=int)
 parser.add_argument("--model_episode", default=0, type=int)
 
 parser.add_argument("--load_model", action='store_true')  # 加是true；不加为false
-parser.add_argument("--load_model_run", default=2, type=int)
-parser.add_argument("--load_model_run_episode", default=4000, type=int)
+parser.add_argument("--load_run", default=2, type=int)
+parser.add_argument("--load_episode", default=900, type=int)
 
 
 device = 'cpu'
@@ -87,8 +87,8 @@ def main(args):
 
     if args.load_model:
         model = PPO()
-        load_dir = os.path.join(os.path.dirname(run_dir), "run" + str(args.load_model_run))
-        model.load(load_dir,episode=args.load_model_run_episode)
+        load_dir = os.path.join(os.path.dirname(run_dir), "run" + str(args.load_run))
+        model.load(load_dir,episode=args.load_episode)
     else:
         model = PPO(run_dir)
         Transition = namedtuple('Transition', ['state', 'action', 'a_log_prob', 'reward', 'next_state', 'done'])
@@ -175,7 +175,8 @@ def main(args):
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    #args.load_model = True
-    #args.load_model_run = 4
-    #args.load_model_run_episode=300
+    args.load_model = True
+    args.load_run = 3
+    args.map = 3
+    args.load_episode= 900
     main(args)
