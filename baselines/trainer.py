@@ -42,7 +42,7 @@ def get_args():
     parser.add_argument('--algo', default="ppo", type=str,
                         help="ppo/sac")
     # train
-    parser.add_argument('--max_episodes', default=1000, type=int)
+    parser.add_argument('--max_episodes', default=1500, type=int)
     parser.add_argument('--train', action='store_true') # 加是true；不加为false
     # load model
     parser.add_argument('--load', action='store_true') # 加是true；不加为false
@@ -135,7 +135,7 @@ def main(args):
 
     for i_epoch in range(0, args.max_episodes):
         if info.shuffle_map:
-            env = make_env(random.choice([1,2]))
+            env = make_env(random.choice([1,2,3,4]))
         else:
             env = make_env(args.map)
         env.set_seed(random.randint(0, 10000))
@@ -279,7 +279,7 @@ def main(args):
                 if args.train:
                     writer.add_scalar('training Gt', Gt, i_epoch)
                 break
-        if i_epoch % 100 == 0 and train:
+        if i_epoch % 500 == 0 and train:
             agent.save(run_dir, i_epoch)
 
 

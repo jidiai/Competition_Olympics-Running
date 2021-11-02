@@ -33,40 +33,6 @@ class Wrapper:
         self.step += 1
         return self.stackedobs.numpy()
 
-    def get_features(self, obs):
-        arrow_point_set = []
-        left_most, right_most, up_most, down_most = 24, 0, 24, 0
-
-        for row in range(25):
-            for column in range(25):
-                if obs[row, column] == 4.0:
-                    arrow_point_set.append([row, column])
-                    up_most = min(up_most, row)
-                    down_most = max(down_most, row)
-
-                    left_most = min(left_most, column)
-                    right_most = max(right_most, column)
-
-        center = [(up_most + down_most) / 2, (left_most + right_most) / 2]
-        left, right, up, down = 0, 0, 0, 0
-
-        for i in arrow_point_set:
-            if i[0] < center[0]:
-                up += 1
-            elif i[0] > center[0]:
-                down += 1
-            else:
-                pass
-
-            if i[1] < center[1]:
-                left += 1
-            elif i[1] > center[1]:
-                right += 1
-            else:
-                pass
-
-        return np.array([left, right])
-
     def flatten_obs(self, obs):
         return np.array(obs).flatten()
 

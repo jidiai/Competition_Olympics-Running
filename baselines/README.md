@@ -14,6 +14,13 @@ ON each map, we train a vanila PPO agent independently and the training loss plo
 
 <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map3%20training%20(run3).png>
 
+### Map 4
+
+<img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map4%20training%20(run4).png>
+
+Train one by yourself with the code:
+
+>python trainer.py --train --map=1 --algo=ppo
 
 ### Testing
 

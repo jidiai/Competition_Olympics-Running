@@ -42,14 +42,13 @@ COLOR_TO_IDX = {
 
 }
 
-# Map of object type to integers
+# Map of object type to integers in output (partial) observation
 OBJECT_TO_IDX = {
-    'agent': 0,
-    'wall': 1,  # 反弹
-    'cross': 2,   # 可穿越
-    'goal': 3,   # 可穿越 # maybe case by case
-    'arc': 4,
-    'ball': 5   #ball can cross some wall if the wall is grey
+    'agent2': 1,
+    'cross': 4,
+    'agent1': 5,
+    'wall': 6,
+    'goal': 7,
 }
 
 

@@ -34,18 +34,15 @@ RENDER = True
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--map', default="map4", type=str,
-                        help= "map1/map2/map3")
+                        help= "map1/map2/map3/map4")
     parser.add_argument("--seed", default=1, type=int)
     args = parser.parse_args()
 
-    # Gamemap = create_scenario(args.map)
-    # random.seed(args.seed)
     random.seed(args.seed)
     np.random.seed(args.seed)
-    #
-    # game = arc_running(Gamemap)
-    agent1 = rule_agent()#random_agent()
-    agent2 = rule_agent()
+
+    agent1 = random_agent()
+    agent2 = random_agent()
 
     map_index_seq = list(range(1,5))
     time_s = time.time()
@@ -59,23 +56,6 @@ if __name__ == "__main__":
         rnd_seed = random.randint(0, 1000)
         game = Running(Gamemap, seed = rnd_seed)
 
-        # R = False
-        # load = False
-        # if i == 2:
-        #     R = True
-        #
-        # if R:
-        #     record = dict()
-        #     record["map"] = args.map
-        #     record["seed"] = args.seed
-        #     record["actions"] = list()
-        #
-        # if load:
-        #     path = "logs/bug1.json"
-        #     record = load_record(path)
-        #     actions_loaded = record["actions"]
-
-        #print(i)
         obs = game.reset()
         if RENDER:
             game.render()
@@ -90,7 +70,6 @@ if __name__ == "__main__":
             step += 1
 
             action1 = agent1.act(obs[0])
-            #action1 = [200,random.uniform(-30, 30)]
             action2 = agent2.act(obs[1])
 
             obs, reward, done, _ = game.step([action1, action2])
