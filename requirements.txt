@@ -12,3 +12,5 @@ wincertstore==0.2
 torch==1.9.1
 pyyaml
 tensorboard
+gym
+tabulate

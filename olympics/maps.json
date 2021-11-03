@@ -1,7 +1,7 @@
 {
   "map1": {
     "wall": {
-      "num": 7,
+      "num": 3,
       "objects": {
         "component1": {
           "initial_position": [

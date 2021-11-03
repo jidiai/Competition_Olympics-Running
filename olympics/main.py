@@ -1,13 +1,7 @@
 import sys
-# from pathlib import Path
-# base_path = str(Path(__file__).resolve().parent.parent.parent)
-# sys.path.append(base_path)
-
 from os import path
 father_path = path.dirname(__file__)
-print("xxx", father_path)
 sys.path.append(str(father_path))
-print("father path: ", father_path)
 from generator import create_scenario
 import argparse
 from agent import *
@@ -47,7 +41,7 @@ if __name__ == "__main__":
     map_index_seq = list(range(1,5))
     time_s = time.time()
     for i in range(20):
-        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        print("==========================================")
         ind = map_index_seq.pop(0)
         print("map index: ", ind)
         Gamemap = create_scenario("map"+str(ind))
@@ -66,7 +60,6 @@ if __name__ == "__main__":
         if RENDER:
             game.render('MAP {}'.format(ind))
 
-        time_epi_s = time.time()
         while not done:
             step += 1
 
@@ -78,15 +71,5 @@ if __name__ == "__main__":
             if RENDER:
                 game.render()
 
-            # plt.imshow(obs[0])  #allow you to visualise the partial observation
-            #  plt.show()
-            # clock.tick(1)
-            # time.sleep(0.5)
-        print("episode duration: ", time.time() - time_epi_s, "step: ", step, (time.time() - time_epi_s)/step)
-        print('Reward = {}'.format(reward))
-
-        # if R:
-        #     store(record,'bug1')
-    print("total test time: ", time.time() - time_s)
-
+        print('Episode Reward = {}'.format(reward))
 
