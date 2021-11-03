@@ -4,6 +4,7 @@ import time
 import json
 import sys
 import numpy as np
+import argparse
 
 from env.chooseenv import make
 from utils.get_logger import get_logger
@@ -220,38 +221,20 @@ def get_valid_agents():
 
 
 if __name__ == "__main__":
-    # "gobang_1v1", "reversi_1v1", "snakes_1v1", "sokoban_2p", "snakes_3v3", "snakes_2p", "snakes_5p", "sokoban_1p"
-    # "classic_CartPole-v0", "classic_MountainCar-v0", "classic_MountainCarContinuous-v0",
-    # "classic_Pendulum-v0", "classic_Acrobot-v1", "football_11v11_kaggle", "MiniWorld-Hallway-v0",
-    # "MiniWorld-OneRoom-v0", "MiniWorld-OneRoomS6-v0", "MiniWorld-OneRoomS6Fast-v0",
-    # "MiniWorld-TMaze-v0", "MiniWorld-TMazeLeft-v0", "MiniWorld-TMazeRight-v0", "MiniGrid-DoorKey-16x16-v0",
-    # "MiniGrid-MultiRoom-N6-v0", "MiniGrid-Dynamic-Obstacles-16x16-v0", "ParticleEnv-simple",
-    # "ParticleEnv-simple_adversary", "ParticleEnv-simple_crypto", "ParticleEnv-simple_push",
-    # "ParticleEnv-simple_reference", "ParticleEnv-simple_speaker_listener", "ParticleEnv-simple_spread",
-    # "ParticleEnv-simple_tag", "ParticleEnv-simple_world_comm", "football_11_vs_11_stochastic",
-    # "overcookedai-cramped_room", "overcookedai-asymmetric_advantages", "overcookedai-coordination_ring",
-    # "overcookedai-forced_coordination", "overcookedai-counter_circuit", "magent-battle_v3-12v12",
-    # "magent-battle_v3-20v20", "gridworld", "cliffwalking", "smarts-loop", "sc2-MoveToBeacon", "olympics-running",
-    # "smarts-cloverleaf", "smarts-figure_eight", "smarts-minicity", "smarts-straight", "smarts-zoo_intersection",
-    # "smarts-ngsim-partial", "smarts-ngsim", "robotics_FetchPickAndPlace", "robotics_HandManipulateBlock",
-    # "robotics_HandManipulatePen", "sc2-CollectMineralShards", "sc2-FindAndDefeatZerglings", "sc2-DefeatRoaches",
-    # "sc2-DefeatZerglingsAndBanelings", "sc2-Simple64", "chessandcard-go_v4", "chessandcard-chess_v3",
-    # "chessandcard-checkers_v3", "chessandcard-mahjong_v3", "chessandcard-texas_holdem_v3",
-    # "chessandcard-texas_holdem_no_limit_v3"
-    env_type = "olympics_running"
-    game = make(env_type)
 
-    # 针对"classic_"环境，使用gym core 进行render;
-    # gridgame类环境（"gobang_1v1", "reversi_1v1", "snakes_1v1", "sokoban_2p", "snakes_3v3",
-    # "snakes_5p", "sokoban_1p", "cliffwalking"），使用replay工具包的replay.html，通过上传.json进行网页回放
+    env_type = "olympics_running"
+    game = make(env_type, seed=None)
+
     render_mode = False
 
-    # gridgame类环境支持实时render（"gobang_1v1", "reversi_1v1", "snakes_1v1", "sokoban_2p", "snakes_3v3",
-    # "snakes_5p", "sokoban_1p", "cliffwalking"）
     render_in_time = False
 
-    # print("可选policy 名称类型:", get_valid_agents())
-    policy_list = ["random", "rl"] #["random"] * len(game.agent_nums)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--my_ai", default="random", help="rl/random")
+    parser.add_argument("--opponent", default="rl", help="rl/random")
+    args = parser.parse_args()
+
+    policy_list = [args.opponent, args.my_ai] #["random"] * len(game.agent_nums)
 
     multi_part_agent_ids, actions_space = get_players_and_action_space_list(game)
     if render_in_time:

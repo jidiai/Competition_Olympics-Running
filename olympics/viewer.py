@@ -63,8 +63,8 @@ class Viewer():
             r = agent_list[i].r
             color = agent_list[i].color
             #print('color in viewer', color)
-            pygame.draw.circle(self.background, COLORS[color], t, r, 4)
-            pygame.draw.circle(self.background, COLORS[color], t, 2, 4)
+            pygame.draw.circle(self.background, COLORS[color], t, r, 0)
+            pygame.draw.circle(self.background, COLORS['black'], t, 2, 2)
 
 
     def draw_direction(self, pos_list, a_list):
@@ -106,7 +106,7 @@ class Viewer():
 
     def draw_obs(self, points, agent_list):
         for b in range(len(points)):
-            pygame.draw.lines(self.background, agent_list[b].color, 1, points[b], 1)
+            pygame.draw.lines(self.background, agent_list[b].color, 1, points[b], 2)
 
     def draw_energy_bar(self, agent_list):
         coord = [570 + 70 * i for i in range(len(agent_list))]
@@ -136,10 +136,12 @@ class Viewer():
                 y += grid_node_height
 
             pygame.draw.circle(self.background, COLORS[agent_list[agent_idx].color], [coord[agent_idx]+10, 55 + agent_list[agent_idx].r],
-                               agent_list[agent_idx].r, width=2)
-            pygame.draw.circle(self.background, COLORS[agent_list[agent_idx].color], [coord[agent_idx]+10, 55 + agent_list[agent_idx].r], 2,
-                               width=2)
+                               agent_list[agent_idx].r, width=0)
+            pygame.draw.circle(self.background, COLORS["black"], [coord[agent_idx]+10, 55 + agent_list[agent_idx].r], 2,
+                               width=0)
 
+            pygame.draw.lines(self.background, points =[[566+70*agent_idx,5],[566+70*agent_idx, 55], [566+50+70*agent_idx, 55], [566+50+70*agent_idx, 5]], closed=True,
+                              color = COLORS[agent_list[agent_idx].color], width=2)
 
 
 pygame.init()
