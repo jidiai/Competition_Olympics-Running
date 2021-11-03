@@ -1,5 +1,7 @@
 ## Training
 
+Note: we train and test using the raw version of the running environment [Link](https://github.com/jidiai/Competition_Olympics-Running/blob/main/olympics/scenario/running.py). For wrapped version see file *rl_train*.
+
 On each map, we trained a vanila PPO agent independently and the training loss plots are shown below:
 
 ### Map 1
@@ -18,11 +20,13 @@ On each map, we trained a vanila PPO agent independently and the training loss p
 
 <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map4%20training%20(run4).png>
 
+(we assume the opponent is not moving at all.)
+
 Train one by yourself with the code:
 
 >python trainer.py --train --map=1 --algo=ppo
 
-The training log and the saved models are located in model fiel.
+The training log and the saved models are located in *models* file.
 
 ### Testing
 
