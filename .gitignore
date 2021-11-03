@@ -8,3 +8,4 @@ olympics/scenario/__pycache__/
 baselines/__pycache__/
 baselines/algo/__pycache__/
 olympics/test/.pytest_cache/
+baselines/

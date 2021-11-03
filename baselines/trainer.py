@@ -4,7 +4,6 @@ father_path = path.dirname(__file__)
 sys.path.append(str(father_path))
 
 from algo.ppo import PPO
-from algo.sac import CNN_SAC
 from algo.random import random_agent
 from common import *
 
@@ -40,7 +39,7 @@ def get_args():
     parser.add_argument('--scenario', default="Running", type=str)
     parser.add_argument('--map', default=2, type=int)
     parser.add_argument('--algo', default="ppo", type=str,
-                        help="ppo/sac")
+                        help="ppo")
     # train
     parser.add_argument('--max_episodes', default=1500, type=int)
     parser.add_argument('--train', action='store_true') # 加是true；不加为false
@@ -103,15 +102,6 @@ def main(args):
         #info.add_channel = True
         info.store_when_win = False
         info.discrete_action = True
-    elif args.algo == 'sac':
-        if args.train:
-            agent = CNN_SAC(run_dir)
-        else:
-            agent = CNN_SAC()
-        info.use_cnn = True
-        info.add_channel = True
-        info.store_when_win = True
-        info.discrete_action=True
 
 
     if info.use_LSTM:
