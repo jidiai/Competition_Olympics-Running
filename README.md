@@ -56,7 +56,7 @@ This is for now a beta version and we intend to add more sports scenario, stay t
 
 >python rl_trainer/main.py
 
-By default parameters, the total reward of training is shown below"
+By default parameters, the total reward of training is shown below.
 
 <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map1%20training%20(run1).png>
 
