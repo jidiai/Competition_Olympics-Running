@@ -31,7 +31,7 @@ check details in Jidi Competition [RLChina2021智能体竞赛](http://www.jidiai
 平台验证和评测时，在单核CPU上运行用户代码（暂不支持GPU），限制用户每一步返回动作的时间不超过1s，内存不超过500M。
 
 
-This is a POMDP simulated environment of 2D sports games where althletes are spheres and have discrete action space (torque and steering). The observation space (position and velocity) is continuous. We introduce collision and agent's fatigue such that no torque applies when running out of energy.
+This is a POMDP simulated environment of 2D sports games where althletes are spheres and have continuous action space (torque and steering). The observation is a 25*25 array of agent's limited view range. We introduce collision and agent's fatigue such that no torque applies when running out of energy.
 
 This is for now a beta version and we intend to add more sports scenario, stay tuned :)
 

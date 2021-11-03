@@ -49,7 +49,6 @@ if __name__ == "__main__":
     for i in range(20):
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         ind = map_index_seq.pop(0)
-        ind=2
         print("map index: ", ind)
         Gamemap = create_scenario("map"+str(ind))
         map_index_seq.append(ind)

@@ -41,7 +41,7 @@ def get_join_actions(state, algo_list):
 
 
 
-RENDER = False
+RENDER = True
 
 def run_game(env, algo_list, episode, shuffle_map,map_num, verbose=False):
     total_reward = np.zeros(2)
