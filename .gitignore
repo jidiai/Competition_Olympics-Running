@@ -1,5 +1,8 @@
 # Default ignored files
-.idea/
+.idea*
+*/__pycache__/*
+*/*/__pycache__/*
+logs/
 olympics/__pycache__/
 olympics/scenario/__pycache__/
 baselines/__pycache__/
