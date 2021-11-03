@@ -85,8 +85,16 @@ class OlympicsRunning(Game):
         _ = self.reset()
         self.env_core.map_num = num
 
-    def reset(self):
-        self.set_seed()
+    def reset(self, shuffle_map=False):
+        #self.set_seed()
+
+        if shuffle_map:   #if shuffle the map, randomly sample a map again
+            map_index_seq = list(range(1, self.num_map + 1))
+            rand_map_idx = random.choice(map_index_seq)
+            Gamemap = create_scenario("map"+str(rand_map_idx))
+            self.env_core = Running(Gamemap)
+            self.env_core.map_num = rand_map_idx
+
         self.env_core.reset()
         self.step_cnt = 0
         self.done = False

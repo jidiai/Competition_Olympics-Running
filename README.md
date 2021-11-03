@@ -60,6 +60,12 @@ By default parameters, the total reward of training is shown below"
 
 <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map1%20training%20(run1).png>
 
+You can also locally evaluate your trained model by executing:
+
+>python evaluation_local.py --my_ai rl --opponent random --episode=50 --map=all
+
+or specifying the map number (--map=1).
+
 ## How to test submission
 
 You can locally test your submission. At Jidi platform, we evaluate your submission as same as *run_log.py*

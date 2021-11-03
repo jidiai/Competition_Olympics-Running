@@ -26,6 +26,7 @@ parser.add_argument('--algo', default="ppo", type=str, help="ppo/sac")
 parser.add_argument('--max_episodes', default=1500, type=int)
 parser.add_argument('--episode_length', default=500, type=int)
 parser.add_argument('--map', default=1, type = int)
+parser.add_argument('--shuffle_map', action='store_true')
 
 parser.add_argument('--seed', default=1, type=int)
 
@@ -54,7 +55,8 @@ def main(args):
     print(f'save interval: {args.save_interval}')
 
     env = make(args.game_name)
-    env.specify_a_map(args.map)
+    if not args.shuffle_map:
+        env.specify_a_map(args.map)         #specifying a map, you can also shuffle the map by not doing this step
 
     num_agents = env.n_player
     print(f'Total agent number: {num_agents}')
@@ -79,7 +81,7 @@ def main(args):
     run_dir, log_dir = make_logpath(args.game_name, args.algo)
     if not args.load_model:
         writer = SummaryWriter(os.path.join(str(log_dir), "{}_{} on map {}".format(
-            datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"),args.algo, args.map)))
+            datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"),args.algo, 'all' if args.shuffle_map else args.map)))
         save_config(args, log_dir)
 
     record_win = deque(maxlen=100)
@@ -99,7 +101,7 @@ def main(args):
     train_count = 0
 
     while episode < args.max_episodes:
-        state = env.reset()    #[{'obs':[25,25], "control_player_index": 0}, {'obs':[25,25], "control_player_index": 1}]
+        state = env.reset(args.shuffle_map)    #[{'obs':[25,25], "control_player_index": 0}, {'obs':[25,25], "control_player_index": 1}]
         if RENDER:
             env.env_core.render()
         obs_ctrl_agent = np.array(state[ctrl_agent_index]['obs']).flatten()     #[25*25]

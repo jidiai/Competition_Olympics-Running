@@ -223,7 +223,7 @@ def get_valid_agents():
 if __name__ == "__main__":
 
     env_type = "olympics_running"
-    game = make(env_type, seed=None)
+    game = make(env_type, seed=1)
 
     render_mode = False
 
@@ -234,7 +234,7 @@ if __name__ == "__main__":
     parser.add_argument("--opponent", default="rl", help="rl/random")
     args = parser.parse_args()
 
-    policy_list = [args.opponent, args.my_ai] #["random"] * len(game.agent_nums)
+    policy_list = [args.opponent, args.my_ai] #["random"] * len(game.agent_nums), here we control agent 2 (green agent)
 
     multi_part_agent_ids, actions_space = get_players_and_action_space_list(game)
     if render_in_time:
