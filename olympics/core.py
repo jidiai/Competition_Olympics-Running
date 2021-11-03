@@ -173,6 +173,7 @@ class OlympicsBase(object):
         self.generate_map(map)
 
         self.view_setting = map["view"]
+        self.map_num = None
         #self.is_render = True
 
         self.reset()
@@ -1120,11 +1121,16 @@ class OlympicsBase(object):
         #draw energy bar
         #debug('agent remaining energy = {}'.format([i.energy for i in self.agent_list]), x=100)
         self.viewer.draw_energy_bar(self.agent_list)
+        debug('Agent 0', x=570, y=110)
+        debug('Agent 1', x=640, y=110)
+        if self.map_num is not None:
+            debug('Map {}'.format(self.map_num), x=100)
 
         # debug('mouse pos = '+ str(pygame.mouse.get_pos()))
         debug('Step: ' + str(self.step_cnt), x=30)
         if info is not None:
             debug(info, x=100)
+
 
         for event in pygame.event.get():
             # 如果单击关闭窗口，则退出

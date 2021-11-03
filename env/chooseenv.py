@@ -8,13 +8,16 @@ import env
 import os
 
 
-def make(env_type, conf=None):
+def make(env_type, seed=None, conf=None):
     file_path = os.path.join(os.path.dirname(__file__), 'config.json')
     if not conf:
         with open(file_path) as f:
             conf = json.load(f)[env_type]
     class_literal = conf['class_literal']
-    return getattr(env, class_literal)(conf)
+    if env_type.split('_')[0] in ["olympics"]:
+        return getattr(env, class_literal)(conf, seed)
+    else:
+        return getattr(env, class_literal)(conf)
 
 
 if __name__ == "__main__":

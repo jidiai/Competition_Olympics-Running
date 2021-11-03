@@ -55,6 +55,7 @@ if __name__ == "__main__":
 
         rnd_seed = random.randint(0, 1000)
         game = Running(Gamemap, seed = rnd_seed)
+        game.map_num =ind
 
         obs = game.reset()
         if RENDER:
@@ -75,7 +76,7 @@ if __name__ == "__main__":
             obs, reward, done, _ = game.step([action1, action2])
 
             if RENDER:
-                game.render('MAP {}'.format(ind))
+                game.render()
 
             # plt.imshow(obs[0])  #allow you to visualise the partial observation
             #  plt.show()

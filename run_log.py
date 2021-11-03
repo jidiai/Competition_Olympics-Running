@@ -160,7 +160,7 @@ def run_game(g, env_name, multi_part_agent_ids, actions_spaces, policy_list, ren
         if policy_list[i] not in get_valid_agents():
             raise Exception("agent {} not valid!".format(policy_list[i]))
 
-        file_path = os.path.dirname(os.path.abspath(__file__)) + "/agent/" + policy_list[i] + "/submission.py"
+        file_path = os.path.dirname(os.path.abspath(__file__)) + "/agents/" + policy_list[i] + "/submission.py"
         if not os.path.exists(file_path):
             raise Exception("file {} not exist!".format(file_path))
 
@@ -215,7 +215,7 @@ def run_game(g, env_name, multi_part_agent_ids, actions_spaces, policy_list, ren
 
 
 def get_valid_agents():
-    dir_path = os.path.join(os.path.dirname(__file__), 'agent')
+    dir_path = os.path.join(os.path.dirname(__file__), 'agents')
     return [f for f in os.listdir(dir_path) if f != "__pycache__"]
 
 
@@ -251,7 +251,7 @@ if __name__ == "__main__":
     render_in_time = False
 
     # print("可选policy 名称类型:", get_valid_agents())
-    policy_list = ["random"] * len(game.agent_nums)
+    policy_list = ["random", "rl"] #["random"] * len(game.agent_nums)
 
     multi_part_agent_ids, actions_space = get_players_and_action_space_list(game)
     if render_in_time:

@@ -53,12 +53,17 @@ class OlympicsRunning(Game):
         self.joint_action_space = self.set_action_space()
         self.action_dim = self.joint_action_space
 
+        self.env_core.map_num = rand_map_idx
+
         self.step_cnt = 0
         self.init_info = None
         self.won = {}
         self.n_return = [0] * self.n_player
 
         _ = self.reset()
+
+        self.board_width = self.env_core.view_setting['width']+2*self.env_core.view_setting['edge']
+        self.board_height = self.env_core.view_setting['height']+2*self.env_core.view_setting['edge']
 
     @staticmethod
     def create_seed():
@@ -78,6 +83,7 @@ class OlympicsRunning(Game):
         Gamemap = create_scenario("map"+str(num))
         self.env_core = Running(Gamemap)
         _ = self.reset()
+        self.env_core.map_num = num
 
     def reset(self):
         self.set_seed()
