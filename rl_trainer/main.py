@@ -21,7 +21,7 @@ from rl_trainer.algo.random import random_agent
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--game_name', default="olympics_running", type=str)
+parser.add_argument('--game_name', default="olympics-running", type=str)
 parser.add_argument('--algo', default="ppo", type=str, help="ppo/sac")
 parser.add_argument('--max_episodes', default=1500, type=int)
 parser.add_argument('--episode_length', default=500, type=int)

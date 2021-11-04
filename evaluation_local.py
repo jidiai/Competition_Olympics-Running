@@ -103,7 +103,7 @@ if __name__ == "__main__":
     parser.add_argument("--map", default='all', help='1/2/3/4/all')
     args = parser.parse_args()
 
-    env_type = "olympics_running"
+    env_type = "olympics-running"
     game = make(env_type, conf=None, seed = 1)
 
     if args.map != 'all':

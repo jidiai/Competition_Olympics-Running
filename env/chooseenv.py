@@ -14,7 +14,7 @@ def make(env_type, seed=None, conf=None):
         with open(file_path) as f:
             conf = json.load(f)[env_type]
     class_literal = conf['class_literal']
-    if env_type.split('_')[0] in ["olympics"]:
+    if env_type.split('-')[0] in ["olympics"]:
         return getattr(env, class_literal)(conf, seed)
     else:
         return getattr(env, class_literal)(conf)

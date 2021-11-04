@@ -222,7 +222,7 @@ def get_valid_agents():
 
 if __name__ == "__main__":
 
-    env_type = "olympics_running"
+    env_type = "olympics-running"
     game = make(env_type, seed=None)
 
     render_mode = False

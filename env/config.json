@@ -1,5 +1,5 @@
 {
-    "olympics_running": {
+    "olympics-running": {
     "class_literal": "OlympicsRunning",
     "n_player": 2,
     "max_step": 500,
