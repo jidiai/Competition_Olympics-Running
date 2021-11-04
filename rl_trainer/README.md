@@ -8,6 +8,28 @@ or train on different map:
 
 >python main.py --algo=ppo --shuffle_map
 
+For your reference, we have trained a vanilla PPO agent independently on four given maps and the training reward plot is shown as:
+
+### Map 1
+
+<img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map1%20training%20(run1).png>
+
+### Map 2
+
+<img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map2%20training%20(run2).png>
+
+### Map 3
+
+<img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map3%20training%20(run3).png>
+
+### Map 4
+
+<img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/PPO%20map4%20training%20(run4).png>
+
+(we assume the opponent is not moving at all.)
+
+
+
 
 # Evaluating
 

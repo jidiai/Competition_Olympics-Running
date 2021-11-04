@@ -116,6 +116,6 @@ if __name__ == "__main__":
     #np.random.seed(1)
     #random.seed(1)
 
-    agent_list = [args.opponent, args.my_ai]
+    agent_list = [args.opponent, args.my_ai]        #your are controlling agent green
     run_game(game, algo_list=agent_list, episode=args.episode, shuffle_map=shuffle,map_num=args.map,verbose=False)
 

@@ -66,6 +66,9 @@ You can also locally evaluate your trained model by executing:
 
 or specifying the map number (--map=1).
 
+<img src="https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/evaluation_local_results.png">
+
+
 ## How to test submission
 
 You can locally test your submission. At Jidi platform, we evaluate your submission as same as *run_log.py*
