@@ -140,8 +140,6 @@ class OlympicsBase(object):
 
         self.agent_record = []
 
-        #self.v_square_last = []    #an empty list, user can add agent later
-        #self.v_square_current = []
         self.show_traj = True
         self.draw_obs = True
         self.print_log = False
@@ -175,9 +173,10 @@ class OlympicsBase(object):
         self.view_setting = map["view"]
         self.map_num = None
         #self.is_render = True
+        self.display_mode = False
 
         self.reset()
-        self.check_overlap()
+        #self.check_overlap()
 
     def check_valid_map(self):      #not using due to conflicting with arc center repitition...
         object_init_list = [str(self.map['objects'][i].init_pos) for i in range(len(self.map['objects']))]
@@ -219,12 +218,6 @@ class OlympicsBase(object):
     def set_seed(self, seed=None):
         pass
 
-        # if not seed:        #use previous seed when no new seed input
-        #     seed = self.seed
-        # else:               #update env global seed
-        #     self.seed = seed
-        # random.seed(seed)
-        # np.random.seed(seed)
 
 
 
@@ -278,15 +271,10 @@ class OlympicsBase(object):
         self.step_cnt = 0
         self.done = False
 
-        #self.gamma = 0.98  # for longjump env
-        #if self.is_render:
         self.viewer = Viewer(self.view_setting)
-        #self._init_view()
+        self.display_mode=False
 
-#         self.obs_boundary_init = list()
-#         self.obs_boundary = self.obs_boundary_init
         return self.get_obs()
-        #return self.agent_pos, self.agent_v, self.agent_accel, self.agent_theta
 
     def theta_decoder(self):
         if self.theta < 0 or self.theta > 360:
@@ -1101,6 +1089,10 @@ class OlympicsBase(object):
 
 
     def render(self, info=None):
+
+        if not self.display_mode:
+            self.viewer.set_mode()
+            self.display_mode=True
 
         self.viewer.draw_background()
         # 先画map; ball在map之上

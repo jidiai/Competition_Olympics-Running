@@ -48,10 +48,13 @@ class Viewer():
         height = setting["height"]
         edge = setting["edge"]
         self.WIN_SIZE = width+2*edge, height+2*edge
-        self.background = pygame.display.set_mode(self.WIN_SIZE)
-        self.draw_background()
+        # self.background = pygame.display.set_mode(self.WIN_SIZE)
+        #
+        # self.draw_background()
         self.color_list = [ [255, 0, 0], [0, 255, 0], [0,0,255]  , [0,0,0], [160, 32, 240]]
         # WIN_SIZE = 1000, 1000
+    def set_mode(self):
+        self.background = pygame.display.set_mode(self.WIN_SIZE)
 
     def draw_background(self):
         self.background.fill((255, 255, 255))
