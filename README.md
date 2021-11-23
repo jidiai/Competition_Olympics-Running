@@ -1,3 +1,13 @@
+## Update 23.Nov
+Adding 2 new map to the pool.
+
+<p align="center"> 
+  <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map5.png width=300> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map6.png width=300>
+</p>
+
+
+
+---
 # Competition_1v1running
 
 ## Environment
