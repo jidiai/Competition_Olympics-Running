@@ -310,7 +310,7 @@
       }
     },
     "arc": {
-      "num": 6,
+      "num": 2,
       "objects": {
         "component1": {
           "initial_position": [
@@ -319,10 +319,11 @@
             450.0,
             450.0
           ],
-          "start_radian": 90,
-          "end_radian": 180,
+          "start_radian": 0,
+          "end_radian": -90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component2": {
           "initial_position": [
@@ -331,58 +332,11 @@
             150.0,
             150.0
           ],
-          "start_radian": 90,
-          "end_radian": 180,
-          "passable": "False",
-          "color": "black"
-        },
-        "component3": {
-          "initial_position": [
-            125.0,
-            125.0,
-            450.0,
-            450.0
-          ],
           "start_radian": 0,
-          "end_radian": 90,
-          "passable": "False",
-          "color": "black"
-        },
-        "component4": {
-          "initial_position": [
-            275.0,
-            275.0,
-            150.0,
-            150.0
-          ],
-          "start_radian": 0,
-          "end_radian": 90,
-          "passable": "False",
-          "color": "black"
-        },
-        "component5": {
-          "initial_position": [
-            125.0,
-            125.0,
-            450.0,
-            450.0
-          ],
-          "start_radian": -180,
           "end_radian": -90,
           "passable": "False",
-          "color": "black"
-        },
-        "component6": {
-          "initial_position": [
-            275.0,
-            275.0,
-            150.0,
-            150.0
-          ],
-          "start_radian": -180,
-          "end_radian": -90,
-          "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         }
       }
     },
@@ -1200,7 +1154,8 @@
           "start_radian": 90,
           "end_radian": 180,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component2": {
           "initial_position": [
@@ -1212,7 +1167,8 @@
           "start_radian": 90,
           "end_radian": 180,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component3": {
           "initial_position": [
@@ -1224,7 +1180,8 @@
           "start_radian": 0,
           "end_radian": 90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component4": {
           "initial_position": [
@@ -1236,7 +1193,8 @@
           "start_radian": 0,
           "end_radian": 90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component5": {
           "initial_position": [
@@ -1248,7 +1206,8 @@
           "start_radian": -180,
           "end_radian": -90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component6": {
           "initial_position": [
@@ -1260,7 +1219,8 @@
           "start_radian": -180,
           "end_radian": -90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component7": {
           "initial_position": [
@@ -1272,7 +1232,8 @@
           "start_radian": -90,
           "end_radian": 0,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component8": {
           "initial_position": [
@@ -1284,7 +1245,8 @@
           "start_radian": -90,
           "end_radian": 0,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         }
       }
     },
@@ -1760,7 +1722,8 @@
           "start_radian": 90,
           "end_radian": 180,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 0
         },
         "component2": {
           "initial_position": [
@@ -1772,7 +1735,8 @@
           "start_radian": 90,
           "end_radian": 180,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 0
         },
         "component3": {
           "initial_position": [
@@ -1784,7 +1748,8 @@
           "start_radian": 0,
           "end_radian": 90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 0
         },
         "component4": {
           "initial_position": [
@@ -1796,7 +1761,8 @@
           "start_radian": 0,
           "end_radian": 90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 0
         },
         "component5": {
           "initial_position": [
@@ -1808,7 +1774,8 @@
           "start_radian": 90,
           "end_radian": 180,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 0
         },
         "component6": {
           "initial_position": [
@@ -1820,7 +1787,8 @@
           "start_radian": 90,
           "end_radian": 180,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 0
         },
         "component7": {
           "initial_position": [
@@ -1832,7 +1800,8 @@
           "start_radian": 0,
           "end_radian": 90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 0
         },
         "component8": {
           "initial_position": [
@@ -1844,7 +1813,8 @@
           "start_radian": 0,
           "end_radian": 90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 0
         },
         "component9": {
           "initial_position": [
@@ -1856,7 +1826,8 @@
           "start_radian": -90,
           "end_radian": 0,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 1
         },
         "component10": {
           "initial_position": [
@@ -1868,7 +1839,8 @@
           "start_radian": -90,
           "end_radian": 0,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 1
         },
         "component11": {
           "initial_position": [
@@ -1880,7 +1852,8 @@
           "start_radian": -180,
           "end_radian": -90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 1
         },
         "component12": {
           "initial_position": [
@@ -1892,7 +1865,8 @@
           "start_radian": -180,
           "end_radian": -90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 1
         },
         "component13": {
           "initial_position": [
@@ -1904,7 +1878,8 @@
           "start_radian": -90,
           "end_radian": 0,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 1
         },
         "component14": {
           "initial_position": [
@@ -1916,7 +1891,8 @@
           "start_radian": -90,
           "end_radian": 0,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 1
         },
         "component15": {
           "initial_position": [
@@ -1928,7 +1904,8 @@
           "start_radian": -180,
           "end_radian": -90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         },
         "component16": {
           "initial_position": [
@@ -1940,7 +1917,8 @@
           "start_radian": -180,
           "end_radian": -90,
           "passable": "False",
-          "color": "black"
+          "color": "black",
+          "collision_mode": 3
         }
       }
     },

@@ -326,10 +326,10 @@ class Wall(GameObj):
 
 
 class Arc(GameObj):
-    def __init__(self, init_pos, start_radian, end_radian,color, passable):
-        super(Arc, self).__init__(type =  'arc', color = color)
-        self.init_pos = init_pos        #[x,y,width, height]
-
+    def __init__(self, init_pos, start_radian, end_radian,color, passable, collision_mode):     #collision_mode:  0----collide at start point
+        super(Arc, self).__init__(type =  'arc', color = color)                                 #                 1----collide at end point
+        self.init_pos = init_pos        #[x,y,width, height]                                    #                 2----collide at both point
+                                                                                                #                 3----no endpoint collision
         start_radian = start_radian*math.pi/180
         end_radian = end_radian * math.pi/180
 
@@ -353,6 +353,9 @@ class Arc(GameObj):
 
         self.ball_can_pass = False
         self.arc = 'arc'
+        self.collision_mode = collision_mode
+        assert self.collision_mode in [0,1,2,3], print('ERROR: collision_mode of arc is wrong!')
+
 
     def collision_response(self, pos, v, r, col_target, t, restitution = 1):
 
@@ -516,11 +519,18 @@ class Arc(GameObj):
 
         #print('current angle ={}, start = {} , end = {}; pos = {}'.format(angle, self.start_radian, self.end_radian, [x_new-self.center[0], y_new-self.center[1]]))
 
+        #collision at endpoint
+        if self.collision_mode == 0 and angle==self.start_radian:        #collide at start point
+            return True
+        if self.collision_mode == 1 and angle==self.end_radian:         #collide at end point
+            return True
+        if self.collision_mode == 2 and (angle==self.start_radian or angle==self.end_radian):       #collide at both points
+            return True
+
+
         if self.start_radian >= 0:
             if self.end_radian >= 0 and self.end_radian >= self.start_radian:
-
-                return True if (self.start_radian < angle < self.end_radian) else False     #no equal sign to avoid double collision
-
+                return True if (self.start_radian < angle < self.end_radian) else False
 
             elif self.end_radian >= 0 and self.end_radian < self.start_radian:
 

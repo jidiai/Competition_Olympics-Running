@@ -38,7 +38,8 @@ def create_scenario(scenario_name):
                     start_radian = value["start_radian"],
                     end_radian = value["end_radian"],
                     passable = True if value["passable"] == "True" else False,
-                    color = value['color']
+                    color = value['color'],
+                    collision_mode = value['collision_mode']
                 ))
 
         elif type in ["agent","ball"]:

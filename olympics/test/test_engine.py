@@ -130,46 +130,52 @@ gamemap = {'objects':[], 'agents':[]}
 #gamemap['objects'].append(Wall(init_pos= [[400,500], [800,500]]))
 
 
-gamemap['objects'].append(Wall(init_pos=[[50, 150], [50,300]]))
-gamemap['objects'].append(Wall(init_pos=[[50,300], [250,300]]))
-gamemap['objects'].append(Wall(init_pos=  [[250, 300], [250,650]]))
 
-gamemap['objects'].append(Wall(init_pos=[[250,650], [450,650]]))
-gamemap['objects'].append(Wall(init_pos=[[450, 650], [450, 300]]))
-gamemap['objects'].append(Wall(init_pos=[[450,300], [650, 300]]))
+       # map5
+gamemap['objects'].append(Arc(init_pos=[87.5,237.5,225,225], start_radian=90, end_radian=180, passable=False, color='black', collision_mode = 0))
+gamemap['objects'].append(Arc(init_pos=[87.5,237.5,225,225], start_radian=0, end_radian=90, passable=False, color='black', collision_mode=0))
 
-gamemap['objects'].append(Cross(init_pos=[[650, 300], [650, 150]], color='red'))
-gamemap['objects'].append(Wall(init_pos=[[50,150],[650,150]]))
+gamemap['objects'].append(Arc(init_pos=[162.5,312.5,75,75], start_radian=90, end_radian=180, passable=False, color='black', collision_mode=0))
+gamemap['objects'].append(Arc(init_pos=[162.5,312.5,75,75], start_radian=0, end_radian=90, passable=False, color='black', collision_mode = 0))
+#
+gamemap['objects'].append(Arc(init_pos=[387.5,237.5,225,225], start_radian=90, end_radian=180, passable=False, color='black', collision_mode=0))
+gamemap['objects'].append(Arc(init_pos=[387.5,237.5,225,225], start_radian=0, end_radian=90, passable=False, color='black', collision_mode=0))
+#
+gamemap['objects'].append(Arc(init_pos=[462.5,312.5,75,75], start_radian=90, end_radian=180, passable=False, color='black', collision_mode=0))
+gamemap['objects'].append(Arc(init_pos=[462.5,312.5,75,75], start_radian=0, end_radian=90, passable=False, color='black', collision_mode=0))
+#
+gamemap['objects'].append(Arc(init_pos=[-62.5,237.5,225,225], start_radian=-90, end_radian=0, passable=False, color='black', collision_mode=1))
 
-gamemap['objects'].append(Cross(init_pos=[[325, 500], [350, 475]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[375, 500], [350, 475]], color = 'grey'))
+gamemap['objects'].append(Arc(init_pos=[12.5,312.5,75,75], start_radian=-90, end_radian=0, passable=False, color='black', collision_mode=1))
 
-gamemap['objects'].append(Cross(init_pos=[[325, 400], [350, 375]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[375, 400], [350, 375]], color = 'grey'))
+gamemap['objects'].append(Arc(init_pos=[237.5,237.5,225,225], start_radian=-180, end_radian=-90, passable=False, color='black', collision_mode=1))
+gamemap['objects'].append(Arc(init_pos=[237.5,237.5,225,225], start_radian=-90, end_radian=0, passable=False, color='black', collision_mode=1))
+#
+#
+gamemap['objects'].append(Arc(init_pos=[312.5,312.5,75,75], start_radian=-180, end_radian=-90, passable=False, color='black', collision_mode=1))
+gamemap['objects'].append(Arc(init_pos=[312.5,312.5,75,75], start_radian=-90, end_radian=0, passable=False, color='black', collision_mode = 1))
+#
+gamemap['objects'].append(Arc(init_pos=[537.5,237.5,225,225], start_radian=-180, end_radian=-90, passable=False, color='black', collision_mode=1))
+gamemap['objects'].append(Arc(init_pos=[612.5,312.5,75,75], start_radian=-180, end_radian=-90, passable=False, color='red', collision_mode = 1))
 
-gamemap['objects'].append(Cross(init_pos=[[325, 330], [350, 305]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[375, 330], [350, 305]], color = 'grey'))
+gamemap['objects'].append(Wall(init_pos=[[650,387.5],[650,462.5]], color='red'))
+gamemap['objects'].append(Wall(init_pos=[[50,387.5],[50,462.5]], color='black'))
 
-gamemap['objects'].append(Cross(init_pos=[[325, 600], [350, 575]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[375, 600], [350, 575]], color = 'grey'))
+gamemap['objects'].append(Arc(init_pos=[100,100,100,100], passable=False, start_radian=0, end_radian=90, color='black', collision_mode=1))
 
-gamemap['objects'].append(Cross(init_pos=[[100, 200], [125, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[100, 250], [125, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[200, 200], [225, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[200, 250], [225, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[300, 200], [325, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[300, 250], [325, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[400, 200], [425, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[400, 250], [425, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[500, 200], [525, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[500, 250], [525, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[600, 200], [625, 225]], color = 'grey'))
-gamemap['objects'].append(Cross(init_pos=[[600, 250], [625, 225]], color = 'grey'))
+# gamemap['objects'].append(Wall(init_pos=[[200, 150],[200,300]]))
+# gamemap['objects'].append(Wall(init_pos=[[200, 150],[300,150]]))
+#
+# gamemap['agents'].append(Agent(position = [100, 150], mass = 1, r = 10, color = 'green'))
+
+# gamemap['objects'].append(Arc(init_pos = [275, 275, 150,150], start_radian=0, end_radian=-90, passable=False, color='black', collision_mode=3))
+# gamemap['objects'].append(Wall(init_pos = [[350,425],[650,425]]))
+#
+# gamemap['agents'].append(Agent(position = [612.5,462.5], mass = 1, r = 18.75))
 
 
-gamemap['agents'].append(Agent(position = [400, 600], mass = 1, r = 18.75, color = 'purple'))
-gamemap['agents'].append(Agent(position = [300, 600], mass = 1, r = 18.75, color = 'green'))
-#gamemap['agents'].append(Agent(position = [350, 150], mass = 1, r = 10))
+
+gamemap['agents'].append(Agent(position = [350, 350], mass = 1, r = 10))
 
 #gamemap['agents'].append(Agent(position = [200, 289], mass = 1, r = 10))
 #gamemap['agents'].append(Agent(position = [280, 280], mass = 1, r = 10))
@@ -182,7 +188,7 @@ gamemap['agents'].append(Agent(position = [300, 600], mass = 1, r = 18.75, color
 
 #gamemap['agents'].append(Agent(position = [300, 150], mass = 1, r = 20))
 
-gamemap['view'] = {'width': 600, 'height':600, 'edge': 50, "init_obs":-90}
+gamemap['view'] = {'width': 600, 'height':600, 'edge': 50, "init_obs":180}
 
 
 
@@ -241,7 +247,7 @@ for _ in range(100):
 
     env.reset()
     env.render()
-    time.sleep(2)
+    # env.agent_theta[0][0] = 180
     done = False
     step = 0
     while not done:
@@ -250,16 +256,19 @@ for _ in range(100):
         #    action = [[random.randint(-100,200),random.randint(-30, 30)]]#, [2,1]]#, [2,2]]#, [2,1]]#[[2,1], [2,1]] + [ None for _ in range(4)]
         #else:
         #    action = [[random.randint(-100,200),random.randint(-30, 30)]]#, [2,1]]#, [2,1]]#, [2,random.randint(0,2)]] #[[2,1], [2,1]] + [None for _ in range(4)]
-        action1 = [random.randint(-100, 200), random.randint(-30, 30)]
-        action2 = [random.randint(-100, 200), random.randint(-30, 30)]
-        _,_,done, _ = env.step([action1, action2])
+        #action1 = [random.randint(-100, 200), random.randint(-30, 30)]
+        #action2 = [random.randint(-100, 200), random.randint(-30, 30)]
+        action1 = [100, 0]
+        _,_,done, _ = env.step([action1])
 
-
+        print('agent v = ', env.agent_v)
         env.render()
         step += 1
 
-
-        time.sleep(0.05)
+        if step < 60:
+            time.sleep(0.05)
+        else:
+            time.sleep(0.05)
 
 
 

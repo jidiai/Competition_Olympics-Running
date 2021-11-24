@@ -169,6 +169,7 @@ class OlympicsBase(object):
         self.map = map
         #self.check_valid_map()
         self.generate_map(map)
+        self.merge_map()
 
         self.view_setting = map["view"]
         self.map_num = None
@@ -199,6 +200,22 @@ class OlympicsBase(object):
             #print("boundary: ", boundary)
                 self.obs_boundary_init.append(boundary)
             # self.obs_boundary = self.obs_boundary_init
+    def merge_map(self):
+        point2wall = {}
+        for idx, map_item in enumerate(self.map['objects']):
+            if map_item.type != 'wall':
+                continue
+            l1, l2 = tuple(map_item.l1), tuple(map_item.l2)
+            if not map_item.can_pass():
+                if l1 not in point2wall.keys():
+                    point2wall[l1] = [idx]
+                else:
+                    point2wall[l1].append(idx)
+                if l2 not in point2wall.keys():
+                    point2wall[l2] = [idx]
+                else:
+                    point2wall[l2].append(idx)
+        self.point2wall=point2wall
 
     def get_obs_boundaray(self, init_position, r, visibility):
         # 默认初始视线水平
@@ -575,6 +592,24 @@ class OlympicsBase(object):
             return ignore_wall
 
 
+    # def handle_wall(self, target_wall_idx, col_target, current_agent_idx, col_t,
+    #                 pos_container, v_container, remaining_t, ignore_wall_list):
+    #
+    #     col_pos, col_v = self.wall_response(target_idx=target_wall_idx, col_target = col_target,
+    #                                         pos = pos_container[current_agent_idx], v = v_container[current_agent_idx],
+    #                                         r = self.agent_list[current_agent_idx], t = col_t)
+    #     pos_container[current_agent_idx] = col_pos
+    #     v_container[current_agent_idx] = col_v
+    #
+    #     pos_container, v_container = self.update_other(pos_container=pos_container, v_container=  v_container, t=col_t,
+    #                                                    already_updated=[current_agent_idx])
+    #     remaining_t -= col_t
+    #     if remaining_t <= 1e-14:
+    #         self._add_wall_ignore(col_target, current_agent_idx, target_wall_idx, None, if_global=True)
+    #
+    #     ignore_wall_list = self._add_wall_ignore(col_target, current_agent_idx, target_wall_idx, ignore_wall_list)
+    #
+    #     return pos_container, v_container, remaining_t, ignore_wall_list
     def handle_wall(self, target_wall_idx, col_target, current_agent_idx, col_t,
                     pos_container, v_container, remaining_t, ignore_wall_list):
 
@@ -588,9 +623,35 @@ class OlympicsBase(object):
                                                        already_updated=[current_agent_idx])
         remaining_t -= col_t
         if remaining_t <= 1e-14:
-            self._add_wall_ignore(col_target, current_agent_idx, target_wall_idx, None, if_global=True)
 
-        ignore_wall_list = self._add_wall_ignore(col_target, current_agent_idx, target_wall_idx, ignore_wall_list)
+            if col_target == 'wall':
+                self._add_wall_ignore('wall', current_agent_idx, target_wall_idx, ignore_wall_list,if_global=True)
+                self._add_wall_ignore('l1', current_agent_idx, target_wall_idx, ignore_wall_list,if_global=True)
+                self._add_wall_ignore('l2', current_agent_idx, target_wall_idx, ignore_wall_list,if_global=True)
+            elif col_target == 'l2' or col_target == 'l1':
+                self._add_wall_ignore(col_target, current_agent_idx, target_wall_idx,
+                                                         ignore_wall_list, if_global=True)
+                wall_endpoint = getattr(self.map['objects'][target_wall_idx], col_target)
+                connected_wall = self.point2wall[tuple(wall_endpoint)]
+                for idx in connected_wall:
+                    self._add_wall_ignore('wall', current_agent_idx, idx, ignore_wall_list, if_global=True)
+            else:
+                self._add_wall_ignore(col_target, current_agent_idx, target_wall_idx, None, if_global=True)         #collision of arc
+
+        if col_target == 'wall':
+            ignore_wall_list = self._add_wall_ignore('wall', current_agent_idx, target_wall_idx, ignore_wall_list)
+
+            ignore_wall_list = self._add_wall_ignore('l1', current_agent_idx, target_wall_idx, ignore_wall_list)
+            ignore_wall_list = self._add_wall_ignore('l2', current_agent_idx, target_wall_idx, ignore_wall_list)
+        elif col_target == 'l2' or col_target == 'l1':
+            ignore_wall_list = self._add_wall_ignore(col_target, current_agent_idx, target_wall_idx, ignore_wall_list)
+            wall_endpoint = getattr(self.map['objects'][target_wall_idx], col_target)
+            connected_wall = self.point2wall[tuple(wall_endpoint)]
+            for idx in connected_wall:
+                ignore_wall_list = self._add_wall_ignore('wall', current_agent_idx, idx, ignore_wall_list)
+        else:
+            ignore_wall_list = self._add_wall_ignore(col_target, current_agent_idx, target_wall_idx, ignore_wall_list)
+
 
         return pos_container, v_container, remaining_t, ignore_wall_list
 
