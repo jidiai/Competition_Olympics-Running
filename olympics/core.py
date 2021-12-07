@@ -250,7 +250,7 @@ class OlympicsBase(object):
             self.agent_previous_pos.append(self.agent_init_pos[i])
             self.agent_v.append([0,0])
             self.agent_accel.append([0,0])
-            init_obs = self.view_setting["init_obs"] if "init_obs" in self.view_setting else 0#random_theta
+            init_obs = self.view_setting["init_obs"][i] if "init_obs" in self.view_setting else 0#random_theta
             self.agent_theta.append([init_obs])
             self.agent_list[i].reset()
             self.agent_list[i].reset_color()
