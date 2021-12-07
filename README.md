@@ -1,3 +1,9 @@
+### Update 07.Dec.
+Adding 2 new maps to the pool (map7&8);
+<p align="center"> 
+  <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map7.png width=200> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map8.png width=200>
+</p>
+
 ### Update 24.Nov.
 fix the penetration bugs between two arcs, avoid numerical error when colliding with points...
 
@@ -5,7 +11,7 @@ fix the penetration bugs between two arcs, avoid numerical error when colliding 
 Adding 2 new maps to the pool (map5&6).
 
 <p align="center"> 
-  <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map5.png width=300> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map6.png width=300>
+  <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map5.png width=200> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map6.png width=200>
 </p>
 
 
