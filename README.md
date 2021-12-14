@@ -1,3 +1,6 @@
+### Update 14.Dec.
+Adding numerical error threshold.
+
 ### Update 07.Dec.
 Adding 2 new maps to the pool (map7&8);
 <p align="center"> 
