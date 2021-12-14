@@ -192,7 +192,8 @@ class Wall(GameObj):
 
     def check_on_line(self, point):
         temp = self.A * point[0] + self.B * point[1]
-        if temp == self.C:     #on the line or at least the line extension
+        #if temp == self.C:     #on the line or at least the line extension
+        if abs(temp-self.C) <= 1e-6:
             if not ((min(self.l1[0], self.l2[0]) <= point[0] <= max(self.l1[0], self.l2[0])) and (
                     min(self.l1[1], self.l2[1]) <= point[1] <= max(self.l1[1], self.l2[1]))):
                 return False        #not on the line segment
@@ -400,6 +401,11 @@ class Arc(GameObj):
                 t_inner1 = -(l/k) + sqrt
                 t_inner2 = -(l/k) - sqrt
 
+                if abs(t_inner1) <= 1e-10:
+                    t_inner1 = 0
+                if abs(t_inner2) <= 1e-10:
+                    t_inner2 = 0
+
                 t1_check = self.check_radian(pos, v, t_inner1)
 
                 t2_check = self.check_radian(pos, v, t_inner2)
@@ -444,6 +450,11 @@ class Arc(GameObj):
                 sqrt2  = math.sqrt(RHS2)
                 t_outter1 = -(l/k) + sqrt2
                 t_outter2 = -(l/k) - sqrt2
+
+                if abs(t_outter1) <= 1e-10:
+                    t_outter1 = 0
+                if abs(t_outter2) <= 1e-10:
+                    t_outter2 = 0
 
                 #check radian, for both t,
                 t1_check = self.check_radian(pos, v, t_outter1)
@@ -627,7 +638,8 @@ class Cross(GameObj):
 
     def check_on_line(self, point):
         temp = self.A * point[0] + self.B * point[1]
-        if temp == self.C:     #on the line or at least the line extension
+        #if temp == self.C:     #on the line or at least the line extension
+        if abs(temp-self.C) <= 1e-6:
             if not ((min(self.l1[0], self.l2[0]) <= point[0] <= max(self.l1[0], self.l2[0])) and (
                     min(self.l1[1], self.l2[1]) <= point[1] <= max(self.l1[1], self.l2[1]))):
                 return False        #not on the line segment
