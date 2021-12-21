@@ -1,3 +1,10 @@
+### Update 21.Dec.
+Adding 1 new map to the pool (map9)
+
+<p align="center"> 
+<img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map9.png width=200>
+</p>
+  
 ### Update 14.Dec.
 Adding numerical error threshold.
 
