@@ -8,6 +8,6 @@
     "is_act_continuous": true,
     "agent_nums": [1,1],
     "obs_type": ["vector", "vector"],
-    "map_num": 8
+    "map_num": 9
   }
 }

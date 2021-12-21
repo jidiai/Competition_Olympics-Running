@@ -3038,5 +3038,228 @@
       "edge": 50,
       "init_obs": [180,180]
     }
+  },
+  "map9": {
+    "wall": {
+      "num": 8,
+      "objects": {
+        "component1": {
+          "initial_position": [
+            [
+              20,
+              600
+            ],
+            [
+              500,
+              600
+            ]
+          ],
+          "color": "black"
+        },
+        "component2": {
+          "initial_position": [
+            [
+              20,
+              450
+            ],
+            [
+              20,
+              600
+            ]
+          ],
+          "color": "black"
+        },
+        "component3": {
+          "initial_position": [
+            [
+              500,
+              100
+            ],
+            [
+              500,
+              600
+            ]
+          ],
+          "color": "black"
+        },
+        "component4": {
+          "initial_position": [
+            [
+              400,
+              100
+            ],
+            [
+              400,
+              450
+            ]
+          ],
+          "color": "black"
+        },
+        "component5": {
+          "initial_position": [
+            [
+              20,
+              450
+            ],
+            [
+              400,
+              450
+            ]
+          ],
+          "color": "black"
+        }
+      }
+    },
+    "cross": {
+      "num": 10,
+      "objects": {
+        "component1": {
+          "initial_position": [
+            [
+              400,
+              100
+            ],
+            [
+              500,
+              100
+            ]
+          ],
+          "color": "red"
+        },
+        "component2": {
+          "initial_position": [
+            [
+              200,
+              520
+            ],
+            [
+              170,
+              490
+            ]
+          ],
+          "color": "grey"
+        },
+        "component3": {
+          "initial_position": [
+            [
+              200,
+              520
+            ],
+            [
+              170,
+              550
+            ]
+          ],
+          "color": "grey"
+        },
+        "component4": {
+          "initial_position": [
+            [
+              370,
+              525
+            ],
+            [
+              340,
+              495
+            ]
+          ],
+          "color": "grey"
+        },
+        "component5": {
+          "initial_position": [
+            [
+              370,
+              525
+            ],
+            [
+              340,
+              555
+            ]
+          ],
+          "color": "grey"
+        },
+        "component6": {
+          "initial_position": [
+            [
+              450,
+              450
+            ],
+            [
+              440,
+              460
+            ]
+          ],
+          "color": "grey"
+        },
+        "component7": {
+          "initial_position": [
+            [
+              450,
+              450
+            ],
+            [
+              460,
+              460
+            ]
+          ],
+          "color": "grey"
+        },
+        "component8": {
+          "initial_position": [
+            [
+              450,
+              250
+            ],
+            [
+              440,
+              260
+            ]
+          ],
+          "color": "grey"
+        },
+        "component9": {
+          "initial_position": [
+            [
+              450,
+              250
+            ],
+            [
+              460,
+              260
+            ]
+          ],
+          "color": "grey"
+        }
+      }
+    },
+    "agent": {
+      "num": 2,
+      "objects": {
+        "component1": {
+          "initial_position": [
+            50,
+            500
+          ],
+          "mass": 1,
+          "radius": 15,
+          "color": "purple"
+        },
+        "component2": {
+          "initial_position": [
+            50,
+            550
+          ],
+          "mass": 1,
+          "radius": 15,
+          "color": "green"
+        }
+      }
+    },
+    "view": {
+      "width": 600,
+      "height": 600,
+      "edge": 50,
+      "init_obs": [0,0]
+    }
   }
 }

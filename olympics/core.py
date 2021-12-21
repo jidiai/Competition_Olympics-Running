@@ -794,26 +794,32 @@ class OlympicsBase(object):
 
     def cross_detect(self, previous_pos, new_pos):
 
+        finals = []
+        l1l2 = []
         for object_idx in range(len(self.map['objects'])):
             object = self.map['objects'][object_idx]
             if object.can_pass() and object.color == 'red':
                 l1,l2 = object.init_pos         #locate the pos of Final
-                final = object
+                finals.append(object)
+                l1l2.append([l1, l2])
 
         for agent_idx in range(self.agent_num):
             agent = self.agent_list[agent_idx]
             agent_pre_pos, agent_new_pos = previous_pos[agent_idx], new_pos[agent_idx]
 
-            if line_intersect(line1 = [l1, l2], line2 = [agent_pre_pos, agent_new_pos]):
-                agent.color = 'red'
-                agent.finished = True
-                agent.alive = False
+            for i, final in enumerate(finals):
+                l1, l2 = l1l2[i]
 
-            if (point2line(l1, l2, agent_new_pos) <= self.agent_list[agent_idx].r) and final.check_on_line(closest_point(l1,l2,agent_new_pos)):
-                #if the center of circle to the line has distance less or equal to the radius, and the closest point is on the line, then cross the final
-                agent.color = 'red'
-                agent.finished = True
-                agent.alive = False
+                if line_intersect(line1 = [l1, l2], line2 = [agent_pre_pos, agent_new_pos]):
+                    agent.color = 'red'
+                    agent.finished = True
+                    agent.alive = False
+
+                if (point2line(l1, l2, agent_new_pos) <= self.agent_list[agent_idx].r) and final.check_on_line(closest_point(l1,l2,agent_new_pos)):
+                    #if the center of circle to the line has distance less or equal to the radius, and the closest point is on the line, then cross the final
+                    agent.color = 'red'
+                    agent.finished = True
+                    agent.alive = False
 
 
 
