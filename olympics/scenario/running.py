@@ -1,4 +1,4 @@
-from core import OlympicsBase
+from olympics.core import OlympicsBase
 import time
 
 class Running(OlympicsBase):

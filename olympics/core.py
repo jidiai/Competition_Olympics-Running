@@ -14,7 +14,7 @@ from pathlib import Path
 CURRENT_PATH = str(Path(__file__).resolve().parent)
 sys.path.append(CURRENT_PATH)
 
-from viewer import Viewer, debug
+from olympics.viewer import Viewer, debug
 #from olympics.utils import *
 
 #from generator import create_scenario
