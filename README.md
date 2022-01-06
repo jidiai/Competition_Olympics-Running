@@ -1,3 +1,10 @@
+### Update 06.Jan.2022 (*Happy New Year!*)
+Adding 1 new map to the pool (map10)
+<p align="center"> 
+<img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map10.png width=200>
+</p>
+
+
 ### Update 21.Dec.
 Adding 1 new map to the pool (map9)
 
