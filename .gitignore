@@ -10,3 +10,4 @@ baselines/algo/__pycache__/
 olympics/test/.pytest_cache/
 baselines*
 assets/.DS_Store
+.DS_Store
