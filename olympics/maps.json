@@ -3261,5 +3261,436 @@
       "edge": 50,
       "init_obs": [0,0]
     }
+  },
+  "map10": {
+    "wall": {
+      "num": 8,
+      "objects": {
+        "component1": {
+          "initial_position": [
+            [
+              50,
+              600
+            ],
+            [
+              50,
+              350
+            ]
+          ],
+          "color": "black"
+        },
+        "component2": {
+          "initial_position": [
+            [
+              50,
+              300
+            ],
+            [
+              50,
+              50
+            ]
+          ],
+          "color": "black"
+        },
+        "component3": {
+          "initial_position": [
+            [
+              50,
+              600
+            ],
+            [
+              500,
+              600
+            ]
+          ],
+          "color": "black"
+        },
+        "component4": {
+          "initial_position": [
+            [
+              500,
+              600
+            ],
+            [
+              500,
+              250
+            ]
+          ],
+          "color": "black"
+        },
+        "component5": {
+          "initial_position": [
+            [
+              400,
+              500
+            ],
+            [
+              400,
+              250
+            ]
+          ],
+          "color": "black"
+        },
+        "component6": {
+          "initial_position": [
+            [
+              50,
+              50
+            ],
+            [
+              400,
+              50
+            ]
+          ],
+          "color": "black"
+        },
+        "component7": {
+          "initial_position": [
+            [
+              150,
+              150
+            ],
+            [
+              400,
+              150
+            ]
+          ],
+          "color": "black"
+        },
+        "component8": {
+          "initial_position": [
+            [
+              150,
+              200
+            ],
+            [
+              300,
+              200
+            ]
+          ],
+          "color": "black"
+        },
+        "component9": {
+          "initial_position": [
+            [
+              150,
+              150
+            ],
+            [
+              150,
+              200
+            ]
+          ],
+          "color": "black"
+        },
+        "component10": {
+          "initial_position": [
+            [
+              150,
+              500
+            ],
+            [
+              400,
+              500
+            ]
+          ],
+          "color": "black"
+        },
+        "component11": {
+          "initial_position": [
+            [
+              150,
+              450
+            ],
+            [
+              300,
+              450
+            ]
+          ],
+          "color": "black"
+        },
+        "component12": {
+          "initial_position": [
+            [
+              150,
+              450
+            ],
+            [
+              150,
+              500
+            ]
+          ],
+          "color": "black"
+        },
+        "component13": {
+          "initial_position": [
+            [
+              300,
+              200
+            ],
+            [
+              300,
+              450
+            ]
+          ],
+          "color": "black"
+        },
+        "component14": {
+          "initial_position": [
+            [
+              50,
+              350
+            ],
+            [
+              200,
+              350
+            ]
+          ],
+          "color": "black"
+        },
+        "component15": {
+          "initial_position": [
+            [
+              50,
+              300
+            ],
+            [
+              200,
+              300
+            ]
+          ],
+          "color": "black"
+        },
+        "component16": {
+          "initial_position": [
+            [
+              200,
+              350
+            ],
+            [
+              200,
+              300
+            ]
+          ],
+          "color": "black"
+        },
+        "component17": {
+          "initial_position": [
+            [
+              400,
+              250
+            ],
+            [
+              500,
+              250
+            ]
+          ],
+          "color": "black"
+        }
+      }
+    },
+    "cross": {
+      "num": 10,
+      "objects": {
+        "component1": {
+          "initial_position": [
+            [
+              400,
+              50
+            ],
+            [
+              400,
+              150
+            ]
+          ],
+          "color": "red"
+        },
+        "component2": {
+          "initial_position": [
+            [
+              450,
+              400
+            ],
+            [
+              430,
+              380
+            ]
+          ],
+          "color": "grey"
+        },
+        "component3": {
+          "initial_position": [
+            [
+              450,
+              400
+            ],
+            [
+              470,
+              380
+            ]
+          ],
+          "color": "grey"
+        },
+        "component4": {
+          "initial_position": [
+            [
+              250,
+              550
+            ],
+            [
+              270,
+              530
+            ]
+          ],
+          "color": "grey"
+        },
+        "component5": {
+          "initial_position": [
+            [
+              250,
+              550
+            ],
+            [
+              270,
+              570
+            ]
+          ],
+          "color": "grey"
+        },
+        "component6": {
+          "initial_position": [
+            [
+              100,
+              450
+            ],
+            [
+              120,
+              470
+            ]
+          ],
+          "color": "grey"
+        },
+        "component7": {
+          "initial_position": [
+            [
+              100,
+              450
+            ],
+            [
+              80,
+              470
+            ]
+          ],
+          "color": "grey"
+        },
+        "component8": {
+          "initial_position": [
+            [
+              100,
+              200
+            ],
+            [
+              120,
+              220
+            ]
+          ],
+          "color": "grey"
+        },
+        "component9": {
+          "initial_position": [
+            [
+              100,
+              200
+            ],
+            [
+              80,
+              220
+            ]
+          ],
+          "color": "grey"
+        },
+        "component10": {
+          "initial_position": [
+            [
+              250,
+              320
+            ],
+            [
+              270,
+              340
+            ]
+          ],
+          "color": "grey"
+        },
+        "component11": {
+          "initial_position": [
+            [
+              250,
+              320
+            ],
+            [
+              230,
+              340
+            ]
+          ],
+          "color": "grey"
+        },
+        "component12": {
+          "initial_position": [
+            [
+              300,
+              100
+            ],
+            [
+              280,
+              80
+            ]
+          ],
+          "color": "grey"
+        },
+        "component13": {
+          "initial_position": [
+            [
+              300,
+              100
+            ],
+            [
+              280,
+              120
+            ]
+          ],
+          "color": "grey"
+        }
+      }
+    },
+    "agent": {
+      "num": 2,
+      "objects": {
+        "component1": {
+          "initial_position": [
+            430,
+            330
+          ],
+          "mass": 1,
+          "radius": 15,
+          "color": "purple"
+        },
+        "component2": {
+          "initial_position": [
+            470,
+            330
+          ],
+          "mass": 1,
+          "radius": 15,
+          "color": "green"
+        }
+      }
+    },
+    "view": {
+      "width": 600,
+      "height": 600,
+      "edge": 50,
+      "init_obs": [90,90]
+    }
   }
 }
