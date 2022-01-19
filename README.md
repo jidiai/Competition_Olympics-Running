@@ -4,6 +4,17 @@ Adding 1 new map to the pool (map10)
 <img src=https://github.com/jidiai/Competition_Olympics-Running/blob/main/assets/map10.png width=200>
 </p>
 
+### Update 22.Dec, 2021
+specify loaded path.
+
+Make sure you add you current location (~/Competition_Olympics-Running) to PYTHONPATH variable.
+
+**Windows**: `set PYTHONPATH=%PYTHONPATH%;xxx`
+
+**Linux/macOS**: `export PYTHONPATH=$PYTHONPATH:xxx`
+
+where `xxx` is your current path (~/Competition_Olympics-Running)
+
 
 ### Update 21.Dec.
 Adding 1 new map to the pool (map9)
