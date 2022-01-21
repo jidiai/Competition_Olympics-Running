@@ -3692,5 +3692,492 @@
       "edge": 50,
       "init_obs": [90,90]
     }
+  },
+  "map11": {
+    "wall": {
+      "num": 8,
+      "objects": {
+        "component1": {
+          "initial_position": [
+            [
+              500,
+              50
+            ],
+            [
+              500,
+              150
+            ]
+          ],
+          "color": "black"
+        },
+        "component2": {
+          "initial_position": [
+            [
+              500,
+              50
+            ],
+            [
+              200,
+              50
+            ]
+          ],
+          "color": "black"
+        },
+        "component3": {
+          "initial_position": [
+            [
+              500,
+              150
+            ],
+            [
+              250,
+              150
+            ]
+          ],
+          "color": "black"
+        },
+        "component4": {
+          "initial_position": [
+            [
+              550,
+              350
+            ],
+            [
+              200,
+              350
+            ]
+          ],
+          "color": "black"
+        },
+        "component5": {
+          "initial_position": [
+            [
+              650,
+              250
+            ],
+            [
+              650,
+              650
+            ]
+          ],
+          "color": "black"
+        },
+        "component6": {
+          "initial_position": [
+            [
+              550,
+              350
+            ],
+            [
+              550,
+              400
+            ]
+          ],
+          "color": "black"
+        },
+        "component7": {
+          "initial_position": [
+            [ 550,
+              400
+            ],
+            [
+              30,
+              400
+            ]
+          ],
+          "color": "black"
+        },
+        "component8": {
+          "initial_position": [
+            [
+              650,
+              650
+            ],
+            [
+              30,
+              650
+            ]
+          ],
+          "color": "black"
+        },
+        "component9": {
+          "initial_position": [
+            [
+              500,
+              400
+            ],
+            [
+              500,
+              550
+            ]
+          ],
+          "color": "black"
+        },
+        "component10": {
+          "initial_position": [
+            [
+              650,
+              250
+            ],
+            [
+              250,
+              250
+            ]
+          ],
+          "color": "black"
+        },
+        "component11": {
+          "initial_position": [
+            [
+              480,
+              400
+            ],
+            [
+              480,
+              550
+            ]
+          ],
+          "color": "black"
+        },
+        "component12": {
+          "initial_position": [
+            [
+              480,
+              550
+            ],
+            [
+              500,
+              550
+            ]
+          ],
+          "color": "black"
+        },
+        "component13": {
+          "initial_position": [
+            [
+              350,
+              650
+            ],
+            [
+              350,
+              500
+            ]
+          ],
+          "color": "black"
+        },
+        "component14": {
+          "initial_position": [
+            [
+              330,
+              650
+            ],
+            [
+              330,
+              500
+            ]
+          ],
+          "color": "black"
+        },
+        "component15": {
+          "initial_position": [
+            [
+              350,
+              500
+            ],
+            [
+              330,
+              500
+            ]
+          ],
+          "color": "black"
+        },
+        "component16": {
+          "initial_position": [
+            [
+              200,
+              400
+            ],
+            [
+              200,
+              500
+            ]
+          ],
+          "color": "black"
+        },
+        "component17": {
+          "initial_position": [
+            [
+              180,
+              400
+            ],
+            [
+              180,
+              500
+            ]
+          ],
+          "color": "black"
+        },
+        "component18": {
+          "initial_position": [
+            [
+              180,
+              500
+            ],
+            [
+              200,
+              500
+            ]
+          ],
+          "color": "black"
+        },
+        "component19": {
+          "initial_position": [
+            [
+              150,
+              650
+            ],
+            [
+              150,
+              580
+            ]
+          ],
+          "color": "black"
+        },
+        "component20": {
+          "initial_position": [
+            [
+              130,
+              650
+            ],
+            [
+              130,
+              580
+            ]
+          ],
+          "color": "black"
+        },
+        "component21": {
+          "initial_position": [
+            [
+              130,
+              580
+            ],
+            [
+              150,
+              580
+            ]
+          ],
+          "color": "black"
+        }
+      }
+    },
+    "arc": {
+      "num": 2,
+      "objects": {
+        "component1": {
+          "initial_position": [
+            50,
+            50,
+            300,
+            300
+          ],
+          "start_radian": 90,
+          "end_radian": -90,
+          "passable": "False",
+          "color": "black",
+          "collision_mode": 3
+        },
+        "component2": {
+          "initial_position": [
+            200,
+            150,
+            100,
+            100
+          ],
+          "start_radian": 90,
+          "end_radian": -90,
+          "passable": "False",
+          "color": "black",
+          "collision_mode": 3
+        }
+      }
+    },
+    "cross": {
+      "num": 10,
+      "objects": {
+        "component1": {
+          "initial_position":[
+            [
+              50,
+              400
+            ],
+            [
+              50,
+              650
+            ]
+          ],
+          "color": "red"
+        },
+        "component2": {
+          "initial_position": [
+            [
+              210,
+              110
+            ],
+            [
+              240,
+              110
+            ]
+          ],
+          "color": "grey"
+        },
+        "component3": {
+          "initial_position": [
+            [
+              210,
+              110
+            ],
+            [
+              210,
+              80
+            ]
+          ],
+          "color": "grey"
+        },
+        "component4": {
+          "initial_position": [
+            [
+              500,
+              300
+            ],
+            [
+              480,
+              280
+            ]
+          ],
+          "color": "grey"
+        },
+        "component5": {
+          "initial_position": [
+            [
+              500,
+              300
+            ],
+            [
+              480,
+              320
+            ]
+          ],
+          "color": "grey"
+        },
+        "component6": {
+          "initial_position": [
+            [
+              580,
+              550
+            ],
+            [
+              580,
+              520
+            ]
+          ],
+          "color": "grey"
+        },
+        "component7": {
+          "initial_position": [
+            [
+              580,
+              550
+            ],
+            [
+              610,
+              550
+            ]
+          ],
+          "color": "grey"
+        },
+        "component8": {
+          "initial_position": [
+            [
+              400,
+              450
+            ],
+            [
+              420,
+              430
+            ]
+          ],
+          "color": "grey"
+        },
+        "component9": {
+          "initial_position": [
+            [
+              400,
+              450
+            ],
+            [
+              420,
+              470
+            ]
+          ],
+          "color": "grey"
+        },
+        "component10": {
+          "initial_position": [
+            [
+              250,
+              550
+            ],
+            [
+              270,
+              530
+            ]
+          ],
+          "color": "grey"
+        },
+        "component11": {
+          "initial_position": [
+            [
+              250,
+              550
+            ],
+            [
+              270,
+              570
+            ]
+          ],
+          "color": "grey"
+        }
+      }
+    },
+    "agent": {
+      "num": 2,
+      "objects":{
+        "component1": {
+          "initial_position": [
+            480,
+            80
+          ],
+          "mass": 1,
+          "radius": 15,
+          "color": "purple"
+        },
+        "component2": {
+          "initial_position": [
+            480,
+            120
+          ],
+          "mass": 1,
+          "radius": 15,
+          "color": "green"
+        }
+      }
+    },
+    "view": {
+      "width": 600,
+      "height": 600,
+      "edge": 50,
+      "init_obs": [180,180]
+    }
   }
 }
